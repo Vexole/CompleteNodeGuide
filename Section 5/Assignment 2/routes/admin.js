@@ -9,11 +9,11 @@ const products = [];
 router.get('/add-product', (req, res, next) => {
     // res.send('<form action="/admin/add-product" method="POST"><input type="text" name="title" /> <button type="submit">Add Product</button></form>');
     // res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
-    res.render('add-product', { title: 'Add Product', path: '/admin/add-product' });
+    res.render('add-product', { title: 'Add Product', path: '/admin/add-product', formsCSS: true, productsCSS: true, activeProduct: true });
 });
 
 router.post('/add-product', (req, res, next) => {
-    products.push({ title: req.body.title });    
+    products.push({ title: req.body.title });
     res.redirect('/');
 });
 
